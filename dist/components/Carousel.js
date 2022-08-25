@@ -46,7 +46,7 @@ function Carousel(_ref) {
     showNavBtn = true
   } = _ref;
   //Initialize States
-  const [slide, setSlide] = (1, _react.useState)(1);
+  const [slide, setSlide] = (0, _react.useState)(0);
   const [isPaused, setIsPaused] = (0, _react.useState)(false);
   const [change, setChange] = (0, _react.useState)(0); //Function to change slide
 
@@ -170,8 +170,9 @@ function Carousel(_ref) {
     }, slideNumber && /*#__PURE__*/_react.default.createElement("div", {
       className: "slide-number",
       style: slideNumberStyle
-    }, index + 2, " / ", data.length), /*#__PURE__*/_react.default.createElement("img", {
+    }, index + 1, " / ", data.length), /*#__PURE__*/_react.default.createElement("img", {
       src: item,
+      alt: item,
       className: "carousel-image",
       style: {
         borderRadius: radius,
@@ -223,6 +224,7 @@ function Carousel(_ref) {
     return /*#__PURE__*/_react.default.createElement("img", {
       width: thumbnailWidth ? thumbnailWidth : "100px",
       src: item,
+      alt: item,
       className: "thumbnail",
       id: "thumbnail-".concat(index),
       key: index,
